@@ -244,7 +244,7 @@ public class MusicControls extends CordovaPlugin {
 			this.mediaSessionCompat.setPlaybackState(playbackstateBuilder.build());
 		} catch (Exception e) {
 			//try catch added by Neelanjan
-			return false;
+			//return false;
 			
 		}
 	}
