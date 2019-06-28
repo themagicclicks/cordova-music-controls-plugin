@@ -209,7 +209,7 @@ public class MusicControls extends CordovaPlugin {
 		} catch (Exception e) {
 			//try catch added by Neelanjan
 			return false;
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 		
 	}
