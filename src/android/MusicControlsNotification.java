@@ -65,30 +65,45 @@ public class MusicControlsNotification {
 
 	// Show or update notification
 	public void updateNotification(MusicControlsInfos newInfos){
-		// Check if the cover has changed	
-		if (!newInfos.cover.isEmpty() && (this.infos == null || !newInfos.cover.equals(this.infos.cover))){
-			this.getBitmapCover(newInfos.cover);
+		try{
+			// Check if the cover has changed	
+			if (!newInfos.cover.isEmpty() && (this.infos == null || !newInfos.cover.equals(this.infos.cover))){
+				this.getBitmapCover(newInfos.cover);
+			}
+			this.infos = newInfos;
+			this.createBuilder();
+			Notification noti = this.notificationBuilder.build();
+			this.notificationManager.notify(this.notificationID, noti);
+		}catch (Exception e) {
+			//Catch Block added by Neelanjan
+			//This fails when createBuilder runs into catch()
 		}
-		this.infos = newInfos;
-		this.createBuilder();
-		Notification noti = this.notificationBuilder.build();
-		this.notificationManager.notify(this.notificationID, noti);
 	}
 
 	// Toggle the play/pause button
 	public void updateIsPlaying(boolean isPlaying){
-		this.infos.isPlaying=isPlaying;
-		this.createBuilder();
-		Notification noti = this.notificationBuilder.build();
-		this.notificationManager.notify(this.notificationID, noti);
+		try{
+			this.infos.isPlaying=isPlaying;
+			this.createBuilder();
+			Notification noti = this.notificationBuilder.build();
+			this.notificationManager.notify(this.notificationID, noti);
+		}catch (Exception e) {
+			//Catch Block added by Neelanjan
+			//This fails when createBuilder runs into catch()
+		}	
 	}
 
 	// Toggle the dismissable status
 	public void updateDismissable(boolean dismissable){
-		this.infos.dismissable=dismissable;
-		this.createBuilder();
-		Notification noti = this.notificationBuilder.build();
-		this.notificationManager.notify(this.notificationID, noti);
+		try{
+			this.infos.dismissable=dismissable;
+			this.createBuilder();
+			Notification noti = this.notificationBuilder.build();
+			this.notificationManager.notify(this.notificationID, noti);
+		}catch (Exception e) {
+			//Catch Block added by Neelanjan
+			//This fails when createBuilder runs into catch()
+		}
 	}
 
 	// Get image from url
