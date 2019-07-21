@@ -74,9 +74,11 @@ public class MusicControlsNotification {
 			this.createBuilder();
 			Notification noti = this.notificationBuilder.build();
 			this.notificationManager.notify(this.notificationID, noti);
-		}catch (Exception e) {
+		}catch (Exception ex) {
 			//Catch Block added by Neelanjan
 			//This fails when createBuilder runs into catch()
+			ex.printStackTrace();
+			
 		}
 	}
 
@@ -87,9 +89,11 @@ public class MusicControlsNotification {
 			this.createBuilder();
 			Notification noti = this.notificationBuilder.build();
 			this.notificationManager.notify(this.notificationID, noti);
-		}catch (Exception e) {
+		}catch (Exception ex) {
 			//Catch Block added by Neelanjan
 			//This fails when createBuilder runs into catch()
+			ex.printStackTrace();
+			
 		}	
 	}
 
@@ -100,9 +104,11 @@ public class MusicControlsNotification {
 			this.createBuilder();
 			Notification noti = this.notificationBuilder.build();
 			this.notificationManager.notify(this.notificationID, noti);
-		}catch (Exception e) {
+		}catch (Exception ex) {
 			//Catch Block added by Neelanjan
 			//This fails when createBuilder runs into catch()
+			ex.printStackTrace();
+			
 		}
 	}
 
@@ -275,8 +281,10 @@ public class MusicControlsNotification {
 				builder.setStyle(new Notification.MediaStyle().setShowActionsInCompactView(args));
 			}
 			this.notificationBuilder = builder;
-		}catch (Exception e) {
+		}catch (Exception ex) {
 			//Catch Block added by Neelanjan
+			ex.printStackTrace();
+			
 		}
 	}
 
